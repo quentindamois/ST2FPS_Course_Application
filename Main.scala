@@ -67,9 +67,9 @@ object UserInput :
         print("Email:")
         val EmailNewStudent : String = readLine()
         EmailNewStudent match { // We chceck to see if the email address id correctly formated
-            case s"$_@$_." if EmailNewStudent.count(x => x == '@') == 1 => println(s"\n[error] The email address must have text after the '.'.\nYou entered $EmailNewStudent")
-            case s"$_@.$_" if EmailNewStudent.count(x => x == '@') == 1 => println(s"\n[error] The email address must have text between the '@' and the '.'.\nYou entered $EmailNewStudent")
-            case s"@$_.$_" if EmailNewStudent.count(x => x == '@') == 1 => println(s"\n[error] The email address must have text between befor the '@'.\nYou entered $EmailNewStudent")
+            case s"$_@$_." if EmailNewStudent.count(x => x == '@') == 1 => println(s"[error] The email address must have text after the '.'.\nYou entered $EmailNewStudent")
+            case s"$_@.$_" if EmailNewStudent.count(x => x == '@') == 1 => println(s"[error] The email address must have text between the '@' and the '.'.\nYou entered $EmailNewStudent")
+            case s"@$_.$_" if EmailNewStudent.count(x => x == '@') == 1 => println(s"[error] The email address must have text between befor the '@'.\nYou entered $EmailNewStudent")
             case s"$_@$_.$_" if EmailNewStudent.count(x => x == '@') == 1 => {
                 print("Mark:")
                 val MarkNewStudent : Double = (readLine()).toDouble
@@ -79,7 +79,7 @@ object UserInput :
                     case MarkNewStudent if MarkNewStudent < 0.0 => println(s"[error] The mark must be between 20.0 and 0.0 included.\n$MarkNewStudent is below 0.0.")
                 }
             }
-            case _ => println(s"\n[error] The email address must contain a @ and at leat one . after the @.\nYou entered $EmailNewStudent")
+            case _ => println(s"[error] The email address must contain a @ and at leat one . after the @.\nYou entered $EmailNewStudent")
         }
         
     }
@@ -129,9 +129,9 @@ object UserInput :
                 print("Email:")
                 val StudentEmail : String = readLine()
                 StudentEmail match { // We check to see the email is correctly formated
-                    case s"$_@$_." if StudentEmail.count(x => x == '@') == 1 => println(s"\n[error] The email address must have text after the '.'.\nYou entered $StudentEmail")
-                    case s"$_@.$_" if StudentEmail.count(x => x == '@') == 1 => println(s"\n[error] The email address must have text between the '@' and the '.'.\nYou entered $StudentEmail")
-                    case s"@$_.$_" if StudentEmail.count(x => x == '@') == 1 => println(s"\n[error] The email address must have text between befor the '@'.\nYou entered $StudentEmail")
+                    case s"$_@$_." if StudentEmail.count(x => x == '@') == 1 => println(s"[error] The email address must have text after the '.'.\nYou entered $StudentEmail")
+                    case s"$_@.$_" if StudentEmail.count(x => x == '@') == 1 => println(s"[error] The email address must have text between the '@' and the '.'.\nYou entered $StudentEmail")
+                    case s"@$_.$_" if StudentEmail.count(x => x == '@') == 1 => println(s"[error] The email address must have text between befor the '@'.\nYou entered $StudentEmail")
                     case s"$_@$_.$_" if StudentEmail.count(x => x == '@') == 1 => {
                         print("Mark:")
                         val StudentMark : Double = (readLine()).toDouble
