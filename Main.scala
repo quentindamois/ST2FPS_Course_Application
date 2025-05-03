@@ -83,7 +83,7 @@ object UserInput :
         }
         
     }
-    /**The function PrintStudent is used to prind the information of one object Student
+    /**The function PrintStudent is used to print the information of one object Student
       *@param s an object Student whose field will be display
     */
     def PrintStudent(s : Student) : Unit = {
