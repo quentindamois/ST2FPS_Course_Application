@@ -66,8 +66,11 @@ object UserInput :
         val NameNewStudent : String = readLine()
         print("Email:")
         val EmailNewStudent : String = readLine()
-        EmailNewStudent match {
-            case s"$_@$_.$_" if EmailNewStudent.count(x => x == '@') == 1 => { // We chceck to see if the email address id correctly formated
+        EmailNewStudent match { // We chceck to see if the email address id correctly formated
+            case s"$_@$_." if EmailNewStudent.count(x => x == '@') == 1 => println(s"\n[error] The email address must have text after the '.'.\nYou entered $EmailNewStudent")
+            case s"$_@.$_" if EmailNewStudent.count(x => x == '@') == 1 => println(s"\n[error] The email address must have text between the '@' and the '.'.\nYou entered $EmailNewStudent")
+            case s"@$_.$_" if EmailNewStudent.count(x => x == '@') == 1 => println(s"\n[error] The email address must have text between befor the '@'.\nYou entered $EmailNewStudent")
+            case s"$_@$_.$_" if EmailNewStudent.count(x => x == '@') == 1 => {
                 print("Mark:")
                 val MarkNewStudent : Double = (readLine()).toDouble
                 MarkNewStudent match { // we check to see if the mark is between 0.0 and 20.0
@@ -126,6 +129,9 @@ object UserInput :
                 print("Email:")
                 val StudentEmail : String = readLine()
                 StudentEmail match { // We check to see the email is correctly formated
+                    case s"$_@$_." if StudentEmail.count(x => x == '@') == 1 => println(s"\n[error] The email address must have text after the '.'.\nYou entered $StudentEmail")
+                    case s"$_@.$_" if StudentEmail.count(x => x == '@') == 1 => println(s"\n[error] The email address must have text between the '@' and the '.'.\nYou entered $StudentEmail")
+                    case s"@$_.$_" if StudentEmail.count(x => x == '@') == 1 => println(s"\n[error] The email address must have text between befor the '@'.\nYou entered $StudentEmail")
                     case s"$_@$_.$_" if StudentEmail.count(x => x == '@') == 1 => {
                         print("Mark:")
                         val StudentMark : Double = (readLine()).toDouble
